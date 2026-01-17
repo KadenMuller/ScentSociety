@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scent Society | Luxurious Fragrances on a Budget</title>
+  <style>
+    body { margin:0; font-family: 'Georgia', serif; background: radial-gradient(circle at top, #1a1a1a, #000); color:#f5f5f5; }
+    header { text-align:center; padding:60px 20px; }
+    header h1 { font-size:3rem; margin-bottom:10px; letter-spacing:2px; }
+    header p { font-size:0.9rem; opacity:0.8; text-transform:uppercase; }
+    section { max-width:1100px; margin:auto; padding:40px 20px; }
+    h2 { text-align:center; margin-bottom:30px; letter-spacing:3px; }
+    .deals { background: rgba(255,255,255,0.05); border-radius:12px; padding:30px; margin-bottom:60px; }
+    .deals ul { list-style:none; padding:0; text-align:center; }
+    .deals li { margin:12px 0; font-size:1.1rem; }
+    .catalogue { display:grid; grid-template-columns:1fr 1fr; gap:40px; }
+    .category { background: rgba(255,255,255,0.05); border-radius:12px; padding:25px; }
+    .category h3 { text-align:center; margin-bottom:20px; text-decoration:underline; letter-spacing:2px; }
+    table { width:100%; border-collapse:collapse; font-size:0.95rem; }
+    th, td { padding:8px 4px; border-bottom:1px solid rgba(255,255,255,0.1); }
+    th { text-align:left; opacity:0.8; }
+    td.price { text-align:right; }
+    .order-btn { background:#25D366; color:#000; border:none; padding:6px 10px; border-radius:20px; font-size:0.8rem; cursor:pointer; }
+    .order-btn:hover { opacity:0.85; }
+    footer { text-align:center; padding:40px 20px; background: rgba(0,0,0,0.6); margin-top:60px; }
+    footer h3 { margin-bottom:15px; letter-spacing:2px; }
+    footer p { margin:6px 0; }
+    .search-box { width:100%; padding:12px; margin-bottom:25px; border-radius:8px; border:none; font-size:1rem; }
+    @media (max-width:900px){ .catalogue{ grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Scent Society</h1>
+  <p>Luxurious Fragrances on a Budget</p>
+</header>
+
+<section class="deals">
+  <h2>Value Deals</h2>
+  <ul>
+    <li>Any 2 Roll-ons (6ml) = <strong>R150</strong> (Save R10)</li>
+    <li>Any 2 Sprays (25ml) = <strong>R220</strong> (Save R20)</li>
+    <li>Combo: Roll-on + 25ml Spray = <strong>R180</strong> (Save R20)</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Fragrance Catalogue</h2>
+  <input type="text" class="search-box" placeholder="Search fragrances..." onkeyup="filterFragrances(this.value)">
+
+  <div class="catalogue" id="catalogue">
+
+    <div class="category">
+      <h3>Masculine</h3>
+      <table>
+        <tr><th>Fragrance</th><th class="price">6ml</th><th class="price">25ml</th><th></th></tr>
+        <tr data-name="Tom Ford Noir"><td>Tom Ford Noir</td><td class="price">R80</td><td class="price">R120</td><td><button class="order-btn" onclick="order('Tom Ford Noir')">Order Now</button></td></tr>
+        
+        <tr data-name="212 VIP"><td>212 VIP</td><td class="price">R80</td><td class="price">R120</td><td><button class="order-btn" onclick="order('212 VIP')">Order Now</button></td></tr>
+        
+        <tr data-name="Lacoste Blanc Pure"><td>Lacoste Blanc Pure</td><td class="price">R80</td><td class="price">R120</td><td><button class="order-btn" onclick="order('Lacoste Blanc Pure')">Order Now</button></td></tr>
+        
+        <tr data-name="Lacoste Pour Lui"><td>Lacoste Pour Lui</td><td class="price">R80</td><td class="price">R120</td><td><button class="order-btn" onclick="order('Lacoste Pour Lui')">Order Now</button></td></tr>
+      
+        <tr data-name="Ferrari Black"><td>Ferrari Black</td><td class="price">R80</td><td class="price">R120</td><td><button class="order-btn" onclick="order('Ferrari Black')">Order Now</button></td></tr>
+        
+        <tr data-name="Ferrari Red"><td>Ferrari Red</td><td class="price">R80</td><td class="price">R120</td><td><button class="order-btn" onclick="order('Ferrari Red')">Order Now</button></td></tr>
+        
+        <tr data-name="Hugo Boss"><td>Hugo Boss</td><td class="price">R80</td><td class="price">R120</td><td><button class="order-btn" onclick="order('Hugo Boss')">Order Now</button></td></tr>
+        
+        <tr data-name="Inspiration"><td>Inspiration</td><td class="price">R80</td><td class="price">R120</td><td><button class="order-btn" onclick="order('Inspiration')">Order Now</button></td></tr>
+    
+        <tr data-name="Calvin Klein One"><td>Calvin Klein One</td><td class="price">R80</td><td class= "price">R120</td><td><button class="order-btn" onclick="order('Calvin Klein One')">Order Now</button> </td></tr>
+
+        <tr data-name="Polo"><td>Polo</td><td class="price">R80</td><td class="price">R120</td><td><button class="order-btn" onclick="order('Polo')">Order Now</button></td></tr>
+        
+        <tr data-name="Tommy Boy"><td>Tommy Boy</td><td class="price">R80</td><td class="price">R120</td><td><button class="order-btn" onclick="order('Tommy Boy')">Order Now</button></td></tr>
+        
+        <tr data-name="Poco 1 Million"><td>Poco 1 Million</td><td class="price">R80</td><td class="price">R120</td><td><button class="order-btn" onclick="order('Poco 1 Million')">Order Now</button></td></tr>
+        
+        <tr data-name="Dior Sauvage"><td>Dior Sauvage</td><td class="price">R80</td><td class="price">R120</td><td><button class="order-btn" onclick="order('Dior Sauvage')">Order Now</button></td></tr>
+    
+        <tr data-name="David Bekham Intimately"><td>David Bekham Intimately</td><td class="price">R80</td><td class="price">R120</td><td><button class="order-btn" onclick="order('David Bekham Intimately')">Order Now</button></td></tr>
+      
+        <tr data-name="Opium"><td>Opium</td><td class="price">R80</td><td class="price">R120</td><td><button class="order-btn" onclick="order('Opium')">Order Now</button></td></tr>
+        
+        <tr data-name="Cool Water"><td>Cool Water</td><td class="price">R80</td><td class="price">R120</td><td><button class="order-btn" onclick="order('Cool Water')">Order Now</button></td></tr>
+        
+        <tr data-name="Dunhill Blue"><td>Dunhill Blue</td><td class="price">R80</td><td class="price">R120</td><td><button class="order-btn" onclick="order('Dunhill Blue')">Order Now</button></td></tr>
+        
+        <tr data-name="Dunhill Black"><td>Dunhill Black</td><td class="price">R80</td><td class="price">R120</td><td><button class="order-btn" onclick="order('Dunhill Black')">Order Now</button></td></tr>
+    
+        <tr data-name="Dunhill Desire"><td>Dunhill Desire</td><td class="price">R80</td><td class= "price">R120</td><td><button class="order-btn" onclick="order('Dunhill Desire')">Order Now</button> </td></tr>
+
+        <tr data-name="Diesel"><td>Diesel</td><td class="price">R80</td><td class="price">R120</td><td><button class="order-btn" onclick="order('Diesel')">Order Now</button></td></tr>
+        
+        <tr data-name="Pleasures"><td>Pleasures</td><td class="price">R80</td><td class="price">R120</td><td><button class="order-btn" onclick="order('Pleasures')">Order Now</button></td></tr>
+        
+        <tr data-name="Hugo Boss Dark Blue"><td>Hugo Boss Dark Blue</td><td class="price">R80</td><td class="price">R120</td><td><button class="order-btn" onclick="order('Hugo Boss Dark Blue')">Order Now</button></td></tr>
+        
+        <tr data-name="DKNY"><td>DKNY</td><td class="price">R80</td><td class="price">R120</td><td><button class="order-btn" onclick="order('DKNY')">Order Now</button></td></tr>
+    
+
+    </table>
+    </div>
+
+    <div class="category">
+      <h3>Feminine</h3>
+      <table>
+        <tr><th>Fragrance</th><th class="price">6ml</th><th class="price">25ml</th><th></th></tr>
+        <tr data-name="Gucci Rush"><td>Gucci Rush</td><td class="price">R80</td><td class="price">R120</td><td><button class="order-btn" onclick="order('Gucci Rush')">Order Now</button></td></tr>
+        <tr data-name="Armani Si"><td>Armani Si</td><td class="price">R80</td><td class="price">R120</td><td><button class="order-btn" onclick="order('Armani Si')">Order Now</button></td></tr>
+        <tr data-name="Victoria's Bombshell"><td>Victoria's Bombshell</td><td class="price">R80</td><td class="price">R120</td><td><button class="order-btn" onclick="order('Victoria\'s Bombshell')">Order Now</button></td></tr>
+      </table>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <h3>Sales & Enquiries</h3>
+  <p>Sean: 063 148 9633</p>
+  <p>Hillary: 067 104 8449</p>
+</footer>
+
+<script>
+  function order(fragrance){
+    const phone = '2761471427';
+    const msg = encodeURIComponent(`Hi, I would like to order ${fragrance}.`);
+    window.open(`https://wa.me/${phone}?text=${msg}`, '_blank');
+  }
+
+  function filterFragrances(query){
+    query = query.toLowerCase();
+    document.querySelectorAll('[data-name]').forEach(row => {
+      row.style.display = row.dataset.name.toLowerCase().includes(query) ? '' : 'none';
+    });
+  }
+</script>
+
+</body>
+</html>
