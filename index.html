@@ -33,9 +33,19 @@
 <body>
 
 <header>
+
+  <div class="logo-space">
+<!-- Logo placeholder -->
+<img src="images/ss1.jpeg" alt="Scent Society Logo" class="logo" width="200" height="200" align="center"/>
+</div>
   <h1>Scent Society</h1>
   <p>Luxurious Fragrances on a Budget</p>
+
 </header>
+
+  <section>
+
+  </section> 
 
 <section class="deals">
   <h2>Value Deals</h2>
@@ -164,7 +174,7 @@
 
 <script>
   function order(fragrance){
-    const phone = '2761471427';
+    const phone = '0761471427';
     const msg = encodeURIComponent(`Hi, I would like to order ${fragrance}.`);
     window.open(`https://wa.me/${phone}?text=${msg}`, '_blank');
   }
